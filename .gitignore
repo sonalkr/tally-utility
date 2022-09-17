@@ -39,3 +39,8 @@ testem.log
 Thumbs.db
 
 .angular
+
+
+# user
+/apps/tally/src/assets/r_data
+/apps/api/tmp/upload

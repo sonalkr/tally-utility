@@ -1,0 +1,8 @@
+.app-box {
+  display: flex;
+  flex-wrap: wrap;
+  /* display: flex; */
+  max-width: 1000px;
+  align-items: center;
+  /* justify-content: center; */
+}

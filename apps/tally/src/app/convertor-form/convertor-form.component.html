@@ -1,0 +1,27 @@
+<h1>Convert Excel to Tally import file</h1>
+<a href="/assets/{{ name }}_template.xlsx"
+  >Click to download {{ name }} Template</a
+>
+<br />
+<input
+  class="file-input"
+  type="file"
+  accept=".xlsx"
+  (change)="changeHandler($event)"
+/>
+<br />
+<input
+  class="btn-download"
+  type="button"
+  value="Submit"
+  (click)="sendData($event)"
+/>
+
+<br />
+<a
+  class="download"
+  *ngIf="download_file.message"
+  href="/assets/r_data/{{ download_file.message }}"
+  download="{{ name }} entry.xml"
+  >Click to download {{ name }} entry</a
+>

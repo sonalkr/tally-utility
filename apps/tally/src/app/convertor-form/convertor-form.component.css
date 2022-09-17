@@ -1,0 +1,18 @@
+.file-input {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  padding-left: 200px;
+  padding-right: 200px;
+
+  background-color: aquamarine;
+}
+
+.btn-download {
+  padding: 10px 40px;
+  margin-top: 10px;
+  float: right;
+}
+.download {
+  margin-top: 30px;
+  font-size: 2rem;
+}

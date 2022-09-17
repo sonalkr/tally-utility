@@ -1,0 +1,21 @@
+.app-card {
+  width: 150px;
+  height: 45px;
+  background-color: aqua;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+  display: table;
+  /* float: left; */
+}
+
+.app-card a {
+  display: table-cell;
+  vertical-align: middle;
+}
+.wip:before {
+  content: 'wip';
+  position: absolute;
+  margin-left: 10px;
+  color: darkslategrey;
+}

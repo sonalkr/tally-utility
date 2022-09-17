@@ -1,0 +1,16 @@
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 1.5rem;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+.center {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
