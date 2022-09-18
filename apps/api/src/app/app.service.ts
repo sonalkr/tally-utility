@@ -5,7 +5,7 @@ import { DataFrame } from 'danfojs-node';
 import { writeFile } from 'fs';
 import { readFile, utils } from 'xlsx';
 import path = require('path');
-import { dirpath } from './global.config';
+import { upload_dirpath } from './global.config';
 
 @Injectable()
 export class AppService {
@@ -13,7 +13,10 @@ export class AppService {
     return { message: 'Welcome to api!' };
   }
   async convertJournal(file: Express.Multer.File): Promise<Message> {
-    const file_path = this.getFilePath(file);
+    const file_path = path.join(
+      '/tmp/tally_utility',
+      file.path.split('/').slice(-1)[0]
+    );
     let file_name = '';
     let result = '';
     result += `
@@ -102,7 +105,7 @@ export class AppService {
 
     file_name = randomUUID() + '.xml';
     await writeFile(
-      path.join(dirpath, '../..', 'tally/src/assets/r_data', file_name),
+      path.join(upload_dirpath, file_name),
       // path.join(dirpath, 'r_data', file_name),
       result,
       (err) => {
@@ -211,7 +214,7 @@ export class AppService {
 
     file_name = randomUUID() + '.xml';
     await writeFile(
-      path.join(dirpath, '../..', 'tally/src/assets/r_data', file_name),
+      path.join(upload_dirpath, file_name),
       // path.join(dirpath, 'r_data', file_name),
       result,
       (err) => {
@@ -318,7 +321,7 @@ export class AppService {
 
     file_name = randomUUID() + '.xml';
     await writeFile(
-      path.join(dirpath, '../..', 'tally/src/assets/r_data', file_name),
+      path.join(upload_dirpath, file_name),
       // path.join(dirpath, 'r_data', file_name),
       result,
       (err) => {
@@ -454,7 +457,7 @@ export class AppService {
     console.log('ok');
     console.log(file_name);
     await writeFile(
-      path.join(dirpath, '../..', 'tally/src/assets/r_data', file_name),
+      path.join(upload_dirpath, file_name),
       // path.join(dirpath, 'r_data', file_name),
       result,
       (err) => {
@@ -592,7 +595,7 @@ export class AppService {
     console.log('ok');
     console.log(file_name);
     await writeFile(
-      path.join(dirpath, '../..', 'tally/src/assets/r_data', file_name),
+      path.join(upload_dirpath, file_name),
       // path.join(dirpath, 'r_data', file_name),
       result,
       (err) => {
@@ -634,6 +637,6 @@ export class AppService {
     return utils.sheet_to_json(s, { defval: null });
   }
   getFilePath(file: Express.Multer.File) {
-    return path.join(dirpath, 'upload', file.path.split('/').slice(-1)[0]);
+    return path.join(upload_dirpath, file.path.split('/').slice(-1)[0]);
   }
 }

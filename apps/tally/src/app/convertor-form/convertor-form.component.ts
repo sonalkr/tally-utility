@@ -41,7 +41,7 @@ export class ConvertorFormComponent {
           const downloadLink = document.createElement('a');
 
           downloadLink.setAttribute('download', `${this.name} entry.xml`);
-          downloadLink.href = '/assets/r_data/' + this.download_file.message;
+          downloadLink.href = 'api/tmp/' + this.download_file.message;
           downloadLink.click();
         });
     }

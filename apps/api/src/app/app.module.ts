@@ -12,6 +12,12 @@ console.log(join(__dirname, '../../../apps/api/tmp/r_data'));
       rootPath: join(__dirname, '../../../apps/api/src/public'),
       renderPath: '/api/public',
     }),
+    // ServeStaticModule.forRoot({
+    //   rootPath: '/tmp/tally_utility',
+    //   // index: false,
+    //   serveStaticOptions: { index: false, extensions: ['xml'] },
+    //   renderPath: '/tmp',
+    // }),
   ],
   controllers: [AppController],
   providers: [AppService],
